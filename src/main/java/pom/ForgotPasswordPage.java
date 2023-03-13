@@ -1,20 +1,20 @@
 package pom;
 
-import lombok.Data;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-@Data
-public class ForgotPasswordPage extends BasePage{
-    WebDriver driver;
+@Getter
+public class ForgotPasswordPage extends BasePage {
+
     @FindBy(xpath = "//input[@name='name']")
-    WebElement emailField;
+    private WebElement emailField;
     @FindBy(xpath = "//button[text()='Восстановить']")
-    WebElement recoverButton;
+    private WebElement recoverButton;
     @FindBy(xpath = "//a[@href='/login']")
-    WebElement signInButton;
+    private WebElement signInButton;
 
     public ForgotPasswordPage(WebDriver driver) {
         super(driver);

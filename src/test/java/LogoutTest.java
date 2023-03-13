@@ -1,5 +1,5 @@
 import Utils.UserGenerator;
-import apiSteps.UserSteps;
+import api.steps.UserSteps;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;

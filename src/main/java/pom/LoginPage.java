@@ -1,25 +1,24 @@
 package pom;
 
-import lombok.Data;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pojo.SignInRq;
 
-@Data
+@Getter
 public class LoginPage extends BasePage {
-    WebDriver driver;
     @FindBy(xpath = "//input[@name='name']")
-    WebElement emailField;
+    private WebElement emailField;
     @FindBy(xpath = "//input[@type='password']")
-    WebElement passwordField;
+    private WebElement passwordField;
     @FindBy(xpath = "//button[text()='Войти']")
-    WebElement signInButton;
+    private WebElement signInButton;
     @FindBy(xpath = "//a[@href='/register']")
-    WebElement signUpButton;
+    private WebElement signUpButton;
     @FindBy(xpath = "//a[@href='/forgot-password']")
-    WebElement recoverPasswordButton;
+    private WebElement recoverPasswordButton;
 
     public LoginPage(WebDriver driver) {
         super(driver);

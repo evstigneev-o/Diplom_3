@@ -1,5 +1,5 @@
 import Utils.UserGenerator;
-import apiSteps.UserSteps;
+import api.steps.UserSteps;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
@@ -55,7 +55,7 @@ public class GoToAccountTest extends BaseTest {
         mainPage.clickAccountButton();
         loginPage.loginWithCredentials(new SignInRq(user.getEmail(), user.getPassword()));
         mainPage.clickAccountButton();
-        boolean displayed = accountPage.getProfileButton().isDisplayed();
-        Assert.assertTrue("Личный кабинет не открылся", displayed);
+        boolean isDisplayed = accountPage.getProfileButton().isDisplayed();
+        Assert.assertTrue("Личный кабинет не открылся", isDisplayed);
     }
 }

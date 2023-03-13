@@ -1,4 +1,4 @@
-package apiSteps;
+package api.steps;
 
 import io.qameta.allure.Step;
 import io.restassured.builder.RequestSpecBuilder;
@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 
 
 public class UserSteps {
-    public static RequestSpecification RqSpec =
+    public static RequestSpecification rqSpec =
             new RequestSpecBuilder()
                     .setBaseUri(BASE_URL + "/api")
                     .setBasePath(AUTH_PATH)
@@ -23,7 +23,7 @@ public class UserSteps {
     @Step("Создание пользователя")
     public static ValidatableResponse createUser(RegisterRq body) {
         return given()
-                .spec(RqSpec)
+                .spec(rqSpec)
                 .body(body)
                 .when()
                 .post(REGISTER_PATH)
@@ -34,7 +34,7 @@ public class UserSteps {
     @Step("Удаление пользователя")
     public static ValidatableResponse deleteUser(String accessToken) {
         return given()
-                .spec(RqSpec)
+                .spec(rqSpec)
                 .header("Authorization", accessToken)
                 .when()
                 .delete(USER_PATH)
@@ -46,7 +46,7 @@ public class UserSteps {
     public static ValidatableResponse signIn(String email, String password) {
         SignInRq body = new SignInRq(email, password);
         return given()
-                .spec(RqSpec)
+                .spec(rqSpec)
                 .body(body)
                 .when()
                 .post(LOGIN_PATH)

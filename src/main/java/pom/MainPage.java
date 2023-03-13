@@ -1,32 +1,31 @@
 package pom;
 
-import lombok.Data;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-@Data
+@Getter
 public class MainPage extends BasePage {
-    WebDriver driver;
     @FindBy(xpath = "//h1[text()='Соберите бургер']")
-    WebElement burgerConstructorHeader;
+    private WebElement burgerConstructorHeader;
     @FindBy(xpath = "//button[text()='Войти в аккаунт']")
-    WebElement homeSignInButton;
+    private WebElement homeSignInButton;
     @FindBy(xpath = "//p[text()='Личный Кабинет']")
-    WebElement homeAccountButton;
+    private WebElement homeAccountButton;
     @FindBy(xpath = "//span[text()='Булки']/parent::div")
-    WebElement bunsSectionButton;
+    private WebElement bunsSectionButton;
     @FindBy(xpath = "//span[text()='Соусы']/parent::div")
-    WebElement sousesSectionButton;
+    private WebElement sousesSectionButton;
     @FindBy(xpath = "//span[text()='Начинки']/parent::div")
-    WebElement fillingsSectionButton;
+    private WebElement fillingsSectionButton;
     @FindBy(xpath = "//h2[text()='Соусы']")
-    WebElement sousesSectionHeader;
+    private WebElement sousesSectionHeader;
     @FindBy(xpath = "//h2[text()='Булки']")
-    WebElement bunsSectionHeader;
+    private WebElement bunsSectionHeader;
     @FindBy(xpath = "//h2[text()='Начинки']")
-    WebElement fillingsSectionHeader;
+    private WebElement fillingsSectionHeader;
 
     public MainPage(WebDriver driver) {
         super(driver);

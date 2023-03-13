@@ -1,4 +1,4 @@
-import apiSteps.UserSteps;
+import api.steps.UserSteps;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
@@ -70,12 +70,12 @@ public class SignUpTest extends BaseTest {
         loginPage.clickSignUpButton();
         signUpPage = new SignUpPage(driver);
         signUpPage.signUp(name, email, password);
-        boolean displayed = signUpPage.getPasswordErrorMessage().isDisplayed();
-        if (!displayed) {
+        boolean isDisplayed = signUpPage.getPasswordErrorMessage().isDisplayed();
+        if (!isDisplayed) {
             accessToken = UserSteps.signIn(email, password)
                     .extract().as(SuccessSignRs.class)
                     .getAccessToken();
         }
-        Assert.assertTrue("Нет ошибки о некорректном пароле", displayed);
+        Assert.assertTrue("Нет ошибки о некорректном пароле", isDisplayed);
     }
 }

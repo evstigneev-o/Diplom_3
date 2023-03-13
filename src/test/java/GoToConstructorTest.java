@@ -1,5 +1,5 @@
 import Utils.UserGenerator;
-import apiSteps.UserSteps;
+import api.steps.UserSteps;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
@@ -54,8 +54,8 @@ public class GoToConstructorTest extends BaseTest {
         loginPage.loginWithCredentials(new SignInRq(user.getEmail(), user.getPassword()));
         mainPage.clickAccountButton();
         accountPage.clickGoToConstructorButton();
-        boolean displayed = mainPage.getBurgerConstructorHeader().isDisplayed();
+        boolean isDisplayed = mainPage.getBurgerConstructorHeader().isDisplayed();
         accessToken = signUpResponse.getAccessToken();
-        Assert.assertTrue("Конструктор не открыт", displayed);
+        Assert.assertTrue("Конструктор не открыт", isDisplayed);
     }
 }
