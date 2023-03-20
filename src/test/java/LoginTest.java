@@ -1,4 +1,4 @@
-import Utils.UserGenerator;
+import utils.UserGenerator;
 import api.steps.UserSteps;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
